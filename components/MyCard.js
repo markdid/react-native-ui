@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
-import {Card, Subheading} from "react-native-paper";
+import { View, StyleSheet, Image } from 'react-native';
+import {Subheading} from "react-native-paper";
 
 class MyCard extends Component {
     render() {

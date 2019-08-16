@@ -7,6 +7,9 @@ import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
+import Dumbbell from '../assets/images/icons/dumbell.png'
+import OrangeDumbbell from '../assets/images/icons/orangeDumbbell.png';
+
 const config = Platform.select({
   web: { headerMode: 'screen' },
   default: {},
@@ -24,11 +27,8 @@ HomeStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-home${focused ? '' : '-outline'}`
-          : 'md-home'
-      }
+      icon={Dumbbell}
+      focusedIcon={OrangeDumbbell}
     />
   ),
 };

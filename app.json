@@ -12,7 +12,8 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "androidStatusBar": {"barStyle":  "dark-content"},
+    "androidStatusBar": {"barStyle":  "light-content"},
+    "primaryColor": "#ffffff",
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
@@ -26,6 +27,9 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.markdid.build"
     }
   }
 }

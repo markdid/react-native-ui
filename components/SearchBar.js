@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
         marginLeft: 20
     },
     searchInput: {
-        color: '#c6c6c7',
-        marginLeft: 20
+        marginLeft: 20,
+        width: 300
     }
 });
 
