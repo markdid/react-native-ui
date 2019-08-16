@@ -1,5 +1,5 @@
 import * as WebBrowser from 'expo-web-browser';
-import React from 'react';
+import React, {Component} from 'react';
 import {
   Image,
   Platform,
@@ -13,23 +13,47 @@ import {
 
 import { MonoText } from '../components/StyledText';
 import SearchBar from "../components/SearchBar";
+import Titles from "../components/Titles";
+import MyCard from "../components/MyCard";
+import Graphic from "../assets/images/undraw_pilates_gpdb.png";
+
+import Hamburger from '../assets/images/hamburger.png';
+import Stretching from '../assets/images/stretching.png';
+import Meditation from '../assets/images/meditation.png';
+import Yoga from '../assets/images/yoga.png';
+
 
 const width = Dimensions.get('window').width;
-export default function HomeScreen() {
-  return (
-    <View style={styles.container}>
-      <ScrollView
-        style={styles.container}
-        contentContainerStyle={styles.contentContainer}>
-        <View style={styles.welcomeContainer}>
-          <SearchBar />
-          <View style={styles.backGround}>
+export default class HomeScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "Mark"
+    };
+  }
 
+  render() {
+    return (
+        <View style={styles.container}>
+          <View style={styles.colorBG}>
+            <Image source={Graphic} style={styles.graphic}/>
           </View>
+          <ScrollView
+              style={styles.container}
+              contentContainerStyle={styles.contentContainer}>
+            <Titles title={`Good Morning ${this.state.name}`}>
+              <SearchBar/>
+            </Titles>
+            <View style={styles.grid}>
+              <MyCard title="Diet Recommendation" image={Hamburger}/>
+              <MyCard title="Stretching" image={Stretching}/>
+              <MyCard title="Meditation" image={Meditation}/>
+              <MyCard title="Yoga" image={Yoga}/>
+            </View>
+          </ScrollView>
         </View>
-      </ScrollView>
-    </View>
-  );
+    );
+  }
 }
 
 HomeScreen.navigationOptions = {
@@ -74,7 +98,26 @@ function handleHelpPress() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5ceb8',
+  },
+  colorBG: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    height: 350,
+    backgroundColor: "#f5ceb8",
+  },
+  graphic: {
+    position: "absolute",
+    left: -60,
+    top: 50
+  },
+  grid: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    padding: 15,
   },
   developmentModeText: {
     marginBottom: 20,
@@ -84,17 +127,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   contentContainer: {
-    paddingTop: 30,
-  },
-  backGround: {
-    marginTop: 150,
-    height: 400,
-    width: width,
-    backgroundColor: 'white'
-  },
-  welcomeContainer: {
-    alignItems: 'center',
-    marginTop: 10,
   },
   tabBarInfoContainer: {
     position: 'absolute',

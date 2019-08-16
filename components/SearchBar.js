@@ -3,6 +3,8 @@ import { View, TextInput, StyleSheet } from 'react-native';
 import { Ionicons } from "@expo/vector-icons";
 
 class SearchBar extends Component {
+
+
     render() {
         return (
             <View style={styles.container}>
@@ -20,11 +22,10 @@ const styles = StyleSheet.create({
        flex: 1,
        flexDirection: 'row',
        alignContent: 'center',
-       marginTop: 200,
        borderRadius: 30,
        backgroundColor: '#ffffff',
-       width: 300,
-       height: 50
+       width: 320,
+       height: 45
    },
     icon: {
         marginTop: 12,
